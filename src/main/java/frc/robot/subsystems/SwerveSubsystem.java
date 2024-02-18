@@ -165,6 +165,26 @@ public class SwerveSubsystem extends SubsystemBase {
     }
   }
 
+  //DRIVE
+  public void drive(double xSpeed, double ySpeed, double zSpeed, boolean fieldOriented){
+    SwerveModuleState[] states;
+    if (fieldOriented) {
+      states = SwerveConstants.DRIVE_KINEMATICS.toSwerveModuleStates(
+        ChassisSpeeds.fromFieldRelativeSpeeds(xSpeed, ySpeed, zSpeed, getRotation2d())
+      );
+    } else {
+      states = SwerveConstants.DRIVE_KINEMATICS.toSwerveModuleStates(
+        new ChassisSpeeds(xSpeed, ySpeed, zSpeed)
+      );
+    }
+
+    setModuleStates(states);
+
+    
+
+
+  }
+
   //STOP 
   public void stopModules() {
     for (SwerveModule swerveMod : swerveModules) {
@@ -186,4 +206,17 @@ public class SwerveSubsystem extends SubsystemBase {
     // SmartDashboard.putString("WORKING DIR", System.getProperty("user.dir"));
     
   }
+
+  /* * * ADDED METHODS * * */
+public double deadzone(double num){
+  return Math.abs(num) > 0.1 ? num : 0;
+}
+
+private static double modifyAxis(double num) {
+// Square the axis
+num = Math.copySign(num * num, num);
+
+return num;
+}
+
 }

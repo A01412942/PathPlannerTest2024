@@ -132,14 +132,25 @@ public final class Constants {
     public static final double KI_TURNING = 0.0002;
     public static final double KD_TURNING = 0.0001;
 
+    public static final double KP_AUTO_TRANSLATION = 0.27;
+    public static final double KI_AUTO_TRANSLATION = 0.0;
+    public static final double KD_AUTO_TRANSLATION = 0.0;
+    public static final double TRANSLATION_TOLLERANCE = 0.01; // tolerance in meters
+
+    public static final double KP_AUTO_ROTATION = 0.0008;
+    public static final double KI_AUTO_ROTATION = 0.00001;
+    public static final double KD_AUTO_ROTATION = 0.0;
+    public static final double ROTATION_TOLLERANCE = 2.5; // tolerance in dergrees
+
+
     /* * * MAX * * */
     public static final double MAX_SPEED = 3.6576; //12.0 ft/s 
     public static final double MAX_ROTATION = MAX_SPEED / Math.hypot(TRACK_WIDTH / 2.0, WHEEL_BASE / 2.0);
 
     public static class AutonomousConstants {
       public static final HolonomicPathFollowerConfig HOLONOMIC_PATH_FOLLOWER_CONFIG = new HolonomicPathFollowerConfig(
-        new PIDConstants(5.0, 0.0, 0.00), //FIXME translation PID constants 
-        new PIDConstants(5.0, 0.0, 0.0), //FIXME rotation PID constants 
+        new PIDConstants(3.0, 0.0, 0.0), //FIXME translation PID constants 
+        new PIDConstants(0.001, 0.0, 0.0), //FIXME rotation PID constants 
         1.5, //FIXME max module speed in m/s 
         (Math.hypot(WHEEL_BASE, TRACK_WIDTH)) / 2, //FIXME drive base radius in meters. dist from robot center to furthest module 
         new ReplanningConfig() //default path replanning config 
