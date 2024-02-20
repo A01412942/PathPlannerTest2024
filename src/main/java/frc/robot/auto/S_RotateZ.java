@@ -4,8 +4,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.SwerveConstants;
 import frc.robot.subsystems.SwerveSubsystem;
 import edu.wpi.first.math.controller.PIDController;
-import edu.wpi.first.math.kinematics.SwerveModuleState;
-
 
 public class S_RotateZ extends Command {
   SwerveSubsystem swerveSub;
@@ -28,7 +26,6 @@ public class S_RotateZ extends Command {
 
   @Override
   public void execute() {
-    SwerveModuleState[] states;
     double zSpeed = pid.calculate(swerveSub.getPose().getRotation().getDegrees(), desiredZ);
     swerveSub.drive(0, 0, zSpeed,  true);
   }

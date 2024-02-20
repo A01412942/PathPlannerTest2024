@@ -3,14 +3,9 @@ package frc.robot.auto;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.SwerveConstants;
 import frc.robot.subsystems.SwerveSubsystem;
-
-import javax.swing.text.StyleContext.SmallAttributeSet;
-
 import edu.wpi.first.math.controller.PIDController;
-import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.math.geometry.Pose2d;
 
 
 public class S_TranslateX extends Command {
@@ -30,13 +25,11 @@ public class S_TranslateX extends Command {
  @Override
   public void initialize() {
     desiredX += swerveSub.getPose().getX();
-    // swerveSub.resetOdometry(new Pose2d(0, 0, new Rotation2d(0)));
   }
 
   @Override
   public void execute() {
     SmartDashboard.putString("CURRENT CMD", getName());
-    SwerveModuleState[] states;
     double xSpeed = pid.calculate(swerveSub.getPose().getX(), desiredX);
     swerveSub.drive(xSpeed, 0, 0,  true);
     

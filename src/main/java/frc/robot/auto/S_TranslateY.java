@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.SwerveConstants;
 import frc.robot.subsystems.SwerveSubsystem;
 import edu.wpi.first.math.controller.PIDController;
-import edu.wpi.first.math.kinematics.SwerveModuleState;
 
 
 public class S_TranslateY extends Command {
@@ -28,7 +27,6 @@ public class S_TranslateY extends Command {
 
   @Override
   public void execute() {
-    SwerveModuleState[] states;
     double ySpeed = pid.calculate(swerveSub.getPose().getY(), desiredY);
     swerveSub.drive(0, ySpeed, 0,  true);
     
