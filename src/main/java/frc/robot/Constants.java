@@ -132,15 +132,15 @@ public final class Constants {
     public static final double KI_TURNING = 0.0002;
     public static final double KD_TURNING = 0.0001;
 
-    public static final double KP_AUTO_TRANSLATION = 0.27;
-    public static final double KI_AUTO_TRANSLATION = 0.0;
-    public static final double KD_AUTO_TRANSLATION = 0.0;
-    public static final double TRANSLATION_TOLLERANCE = 0.01; // tolerance in meters
+    public static final double KP_AUTO_TRANSLATION = 0.285;
+    public static final double KI_AUTO_TRANSLATION = 0.001;
+    public static final double KD_AUTO_TRANSLATION = 0.0002;
+    public static final double TRANSLATION_TOLLERANCE = 0.025; // tolerance in meters
 
-    public static final double KP_AUTO_ROTATION = 0.0008;
-    public static final double KI_AUTO_ROTATION = 0.00001;
-    public static final double KD_AUTO_ROTATION = 0.0;
-    public static final double ROTATION_TOLLERANCE = 2.5; // tolerance in dergrees
+    public static final double KP_AUTO_ROTATION = 0.0011;
+    public static final double KI_AUTO_ROTATION = 0.000;
+    public static final double KD_AUTO_ROTATION = 0.0005;
+    public static final double ROTATION_TOLLERANCE = 1.5; // tolerance in dergrees
 
 
     /* * * MAX * * */

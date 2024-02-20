@@ -203,6 +203,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
     SmartDashboard.putNumber("NAVX", navx.getYaw());
     SmartDashboard.putString("POSE INFO", odometer.getPoseMeters().toString());
+    SmartDashboard.putNumber("rot 2d", ((getRotation2d().getDegrees() % 360) + 360) % 360);
     // SmartDashboard.putString("WORKING DIR", System.getProperty("user.dir"));
     
   }
