@@ -15,25 +15,34 @@ import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.testing.L_LimelightStrafeAlignCmd;
 import frc.robot.testing.LimelightRotationAlignCommand;
 import frc.robot.commands.S_DriveCommand;
+import edu.wpi.first.wpilibj.PS4Controller;
 
 public class RobotContainer {
   //SUBSYSTEMS 
   private final SwerveSubsystem swerveSubs = new SwerveSubsystem(); 
 
   //CONTROLLERS  
-  private final XboxController xbox = new XboxController(ControllerConstants.kDriverControllerPort);
+  //private final XboxController xbox = new XboxController(ControllerConstants.kDriverControllerPort);
+  private final PS4Controller control = new PS4Controller(ControllerConstants.kDriverControllerPort);
 
   //DRIVE BUTTONS 
-  private final JoystickButton resetNavxButton = new JoystickButton(xbox, XboxController.Button.kA.value); 
-  private final JoystickButton resetPosButton = new JoystickButton(xbox, XboxController.Button.kB.value);
-  private final JoystickButton limelightStrafeAlign = new JoystickButton(xbox, XboxController.Button.kX.value);
+  //private final JoystickButton resetNavxButton = new JoystickButton(xbox, XboxController.Button.kA.value); 
+  private final JoystickButton resetNavxButton = new JoystickButton(control, 10); 
+
+ private final JoystickButton resetPosButton = new JoystickButton(control, 9);
+ // private final JoystickButton limelightStrafeAlign = new JoystickButton(xbox, XboxController.Button.kX.value);
 
   //AXIS 
-  private final int joystickAxis = XboxController.Axis.kRightY.value;
+  //private final int joystickAxis = XboxController.Axis.kRightY.value;
+  private final int joystickAxis = PS4Controller.Axis.kRightY.value;
 
 
   public RobotContainer() {
-    swerveSubs.setDefaultCommand(new S_DriveCommand(swerveSubs, () -> -xbox.getLeftY(), () -> -xbox.getLeftX(), () -> -xbox.getRightX(), true));
+    
+    //swerveSubs.setDefaultCommand(new S_DriveCommand(swerveSubs, () -> -xbox.getLeftY(), () -> -xbox.getLeftX(), () -> -xbox.getRightX(), true));
+    swerveSubs.setDefaultCommand(new S_DriveCommand(swerveSubs, () -> -control.getLeftX(), () -> -control.getLeftY(), () -> -control.getRightX(), true));
+    
+    
     // shooter.setDefaultCommand(new Sh_JoystickControlCommand(shooter, () -> xbox.getRawAxis(joystickAxis) * 0.9));
 
     // Configure the trigger bindings
@@ -42,8 +51,9 @@ public class RobotContainer {
 
   private void configureBindings() {
     resetNavxButton.onTrue(new InstantCommand(() -> swerveSubs.resetNavx()));
+
     resetPosButton.onTrue(new InstantCommand(() -> swerveSubs.resetOdometry(new Pose2d(0, 0, new Rotation2d(0)))));
-    limelightStrafeAlign.onTrue(new LimelightRotationAlignCommand(swerveSubs, () -> -xbox.getLeftY(), () -> -xbox.getLeftX(), () -> -xbox.getRightX()));
+  //  limelightStrafeAlign.onTrue(new LimelightRotationAlignCommand(swerveSubs, () -> -xbox.getLeftY(), () -> -xbox.getLeftX(), () -> -xbox.getRightX()));
     
   }
 

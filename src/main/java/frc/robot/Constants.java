@@ -18,9 +18,9 @@ public final class Constants {
     /* * * MEASUREMENTS * * */
     //FIXME REPLACE WITH VALUES OF ACTUAL BASE 
     public static final double WHEEL_DIAMETER = 4 * 2.5 / 100;
-    public static final double TRACK_WIDTH = 0.635;
-    public static final double WHEEL_BASE = 0.635;
-    
+    public static final double TRACK_WIDTH = 0.7366;
+    public static final double WHEEL_BASE = 0.7366;
+  
     public static final double DRIVE_GEAR_RATIO = 8.14 / 1;
     public static final double ROTATION_GEAR_RATIO = 150 / 7;
     
@@ -58,10 +58,10 @@ public final class Constants {
     /* * * FRONT LEFT * * */
     //FIXME FILL IN VALUES FOR FRONT LEFT 
     public static class FrontLeft {
-      public static final int DRIVE_PORT = 1;
-      public static final int ROTATION_PORT = 5;
-      public static final int ABSOLUTE_ENCODER_PORT = 9;
-      public static final double OFFSET = 80.95;
+      public static final int DRIVE_PORT = 3;
+      public static final int ROTATION_PORT = 2;
+      public static final int ABSOLUTE_ENCODER_PORT = 10;
+      public static final double OFFSET = 0; //80.95;
       public static final boolean DRIVE_INVERTED = false; 
       public static final boolean ROTATION_INVERTED = true; 
 
@@ -71,10 +71,10 @@ public final class Constants {
     /* * * BACK LEFT * * */
     //FIXME FILL IN VALUES FOR BACK LEFT 
     public static class BackLeft {
-      public static final int DRIVE_PORT = 2;
-      public static final int ROTATION_PORT = 6;
-      public static final int ABSOLUTE_ENCODER_PORT = 10;
-      public static final double OFFSET = -101.60 + 6;
+      public static final int DRIVE_PORT = 9;
+      public static final int ROTATION_PORT = 8;
+      public static final int ABSOLUTE_ENCODER_PORT = 13;
+      public static final double OFFSET = 0; //-101.60 + 6;
       public static final boolean DRIVE_INVERTED = false; 
       public static final boolean ROTATION_INVERTED = true; 
 
@@ -84,10 +84,10 @@ public final class Constants {
     /* * * BACK RIGHT * * */
     //FIXME FILL IN VALUES FOR BACK RIGHT 
     public static class BackRight {
-      public static final int DRIVE_PORT = 3;
-      public static final int ROTATION_PORT = 7;
-      public static final int ABSOLUTE_ENCODER_PORT = 11;
-      public static final double OFFSET = -28.92 + 6;
+      public static final int DRIVE_PORT = 7;
+      public static final int ROTATION_PORT = 6;
+      public static final int ABSOLUTE_ENCODER_PORT = 12;
+      public static final double OFFSET = 0; //-28.92 + 6;
       public static final boolean DRIVE_INVERTED = false; 
       public static final boolean ROTATION_INVERTED = true; 
 
@@ -97,10 +97,10 @@ public final class Constants {
     /* * * FRONT RIGHT * * */
     //FIXME FILL IN VALUES FOR FRONT RIGHT 
     public static class FrontRight {
-      public static final int DRIVE_PORT = 4;
-      public static final int ROTATION_PORT = 8;
-      public static final int ABSOLUTE_ENCODER_PORT = 12;
-      public static final double OFFSET = -25.31 - 2;
+      public static final int DRIVE_PORT = 5;
+      public static final int ROTATION_PORT = 4;
+      public static final int ABSOLUTE_ENCODER_PORT = 11;
+      public static final double OFFSET = 0; //-25.31 - 2;
       public static final boolean DRIVE_INVERTED = false; 
       public static final boolean ROTATION_INVERTED = true; 
 
