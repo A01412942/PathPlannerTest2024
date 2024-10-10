@@ -1,5 +1,19 @@
 package frc.robot;
+//  =================
+//       Red CAN
+//  =================
+//   0 · roboRIO
+//   1 · PDP
 
+//   2 · frontLeftRotation
+//   3 · frontLeftDrive
+//   4 · frontRightRotation
+//   5 · frontRightDrive
+//   6 · rearRightRotation
+//   7 · rearRightDrive
+//   8 · rearLeftRotation
+//   9 · rearLeftDrive
+//  =================
 import com.pathplanner.lib.util.HolonomicPathFollowerConfig;
 import com.pathplanner.lib.util.PIDConstants;
 import com.pathplanner.lib.util.ReplanningConfig;
