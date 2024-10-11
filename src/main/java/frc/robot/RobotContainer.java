@@ -39,9 +39,9 @@ public class RobotContainer {
 
   public RobotContainer() {
     
-    //swerveSubs.setDefaultCommand(new S_DriveCommand(swerveSubs, () -> -xbox.getLeftY(), () -> -xbox.getLeftX(), () -> -xbox.getRightX(), true));
-    swerveSubs.setDefaultCommand(new S_DriveCommand(swerveSubs, () -> -control.getLeftX(), () -> -control.getLeftY(), () -> -control.getRightX(), true));
-    
+    //swerveSubs.setDefaultCommand(new S_DriveCommand(swerveSubs, () -> -.getLeftY(), () -> -xbox.getLeftX(), () -> -xbox.getRightX(), true));
+    swerveSubs.setDefaultCommand(new S_DriveCommand(swerveSubs, () -> -control.getLeftY(), () -> -control.getLeftX(), () -> control.getRightX(), false));//desactivamos fod para pr
+    //CAMBIAR SIGNOS OTRA VEZ Y PONER BIEN LOS OFFSETS
     
     // shooter.setDefaultCommand(new Sh_JoystickControlCommand(shooter, () -> xbox.getRawAxis(joystickAxis) * 0.9));
 
